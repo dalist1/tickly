@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ducanh2912/next-pwa": "^9.3.0",
     "autoprefixer": "latest",
     "moment": "latest",
     "next": "canary",
-    "next-pwa": "^5.6.0",
     "postcss": "latest",
     "react": "next",
     "react-dom": "next",
