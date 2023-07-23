@@ -23,8 +23,9 @@ export default function Timer({ isTimerEnded, setIsTimerEnded }) {
   function toggle() {
     if (!isActive) {
       setIsActive(true);
-
-      const id = setInterval(() => {
+  
+      // Define the interval function
+      const intervalFunc = () => {
         setSeconds((seconds) => {
           if (seconds > 1) {
             return seconds - 1;
@@ -35,14 +36,20 @@ export default function Timer({ isTimerEnded, setIsTimerEnded }) {
             return 0;
           }
         });
-      }, 1000);
-
+      }
+  
+      // Immediately call the function
+      intervalFunc();
+  
+      // Then set the interval
+      const id = setInterval(intervalFunc, 1000);
+  
       setIntervalId(id);
     } else {
       setIsActive(false);
       clearInterval(intervalId);
     }
-  }
+  }  
   
   return (
     <div className="bg-slate-900 text-5xl rounded-3xl sm:max-lg:p-10 p-24 flex flex-col items-center justify-center gap-10">

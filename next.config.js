@@ -1,13 +1,13 @@
 const withPWA = require("@ducanh2912/next-pwa").default({
-    dest: "public",
-    // disable: process.env.NODE_ENV === "development",
-    register: true,
-    scope: "/app",
-    // sw: "service-worker.js",
-    //...
-  });
-  
-  // Your Next config is automatically typed!
-  module.exports = withPWA({
-    // Your Next.js config
-  });
+  dest: "public",
+  cacheOnFrontEndNav: true,
+  aggressiveFrontEndNavCaching: true,
+});
+
+/** @type {import("next").NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+};
+
+module.exports = withPWA(nextConfig);
