@@ -1,10 +1,10 @@
 {
-    "name": "Timely - PWA",
-    "short_name": "Timely",
+    "name": "Tickly",
+    "short_name": "Tickly",
     "display": "standalone",
     "orientation": "portrait",
-    "theme_color": "#FFFFFF",
-    "background_color": "#FFFFFF",
+    "theme_color": "#030712",
+    "background_color": "#030712",
     "start_url": "/",
     "icons": [
       {

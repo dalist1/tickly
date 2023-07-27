@@ -3,8 +3,8 @@ import { Lilita_One } from "next/font/google"
 
 const lolita = Lilita_One({ subsets: ['latin'], weight: "400" })
 
-const APP_NAME = "Timely";
-const APP_DESCRIPTION = "A simple timer app with Progressive Web App support.";
+const APP_NAME = "Tickly";
+const APP_DESCRIPTION = "A simple timer app with PWA support.";
 
 export const metadata = {
   applicationName: APP_NAME,
@@ -32,7 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-gray-950 ${lolita.className}`}>
+      <body className={`bg-gray-950 text-white ${lolita.className}`}>
         {children}
       </body>
     </html>

@@ -1,5 +1,4 @@
 const withPWA = require("@ducanh2912/next-pwa").default({
-  enable: process.env.NODE_ENV === "development",
   dest: "public",
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
@@ -7,7 +6,6 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  // reactStrictMode: true,
   swcMinify: true,
 };
 

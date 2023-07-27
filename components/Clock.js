@@ -19,7 +19,7 @@ export default function Clock() {
   return (
     <Fragment>
       {time && (
-        <span className="bg-blue-950 absolute top-5 md:right-5 sm:justify-center text-2xl rounded-3xl ring-4 bg-slate-900/95 ring-slate-800 p-6 px-25">
+        <span className="absolute top-5 md:right-5 sm:justify-center text-2xl rounded-3xl ring-4 ring-slate-800 p-6 px-25 bg-slate-900/95">
           {time}
         </span>
       )}
