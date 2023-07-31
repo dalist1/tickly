@@ -1,32 +1,30 @@
 "use client"
 
+import useAppStore from '@/lib/store/useAppStore';
 import { useEffect } from 'react';
 
-const DesktopNotification = ({ title, options, show }) => {
+const DesktopNotification = ({ title = "⏰ Time is up, let's take a break!" }) => {
+  const { isTimerEnded } = useAppStore()
+
   useEffect(() => {
-    if (!show) return;
+    if (!isTimerEnded) return;
 
     if (!("Notification" in window)) {
       console.log("This browser does not support desktop notification");
     } else if (Notification.permission === "granted") {
-      const notification = new Notification(title, options);
-      notification.onclick = function () {
-        window.focus();
-      };
+      const notification = new Notification(title);
+      notification.onclick = () => window.focus();
     } else if (Notification.permission !== "denied") {
       Notification.requestPermission().then(function (permission) {
         if (permission === "granted") {
-          const notification = new Notification(title, options);
-          notification.onclick = function () {
-            window.focus();
-          };
+          const notification = new Notification(title);
+          notification.onclick = () => window.focus();
         }
       });
     }
-  }, [title, options, show]);
+  }, [title, isTimerEnded]);
 
   return null;
 };
-
 
 export default DesktopNotification;

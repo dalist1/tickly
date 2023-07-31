@@ -7,6 +7,9 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   swcMinify: true,
+  experimental: {
+    serverActions: true,
+  },
 };
 
 module.exports = withPWA(nextConfig);
