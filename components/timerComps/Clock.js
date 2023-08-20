@@ -17,12 +17,12 @@ export default function Clock() {
   }, []);
 
   return (
-    <Fragment>
+    <>
       {time && (
-        <span className="absolute top-5 md:right-5 sm:justify-center text-2xl rounded-3xl ring-2 ring-slate-800 p-4 px-25 bg-slate-900/95">
+        <span className="text-2xl rounded-3xl ring-2 ring-slate-800 p-4 px-25 bg-slate-900/95">
           {time}
         </span>
       )}
-    </Fragment>
+    </>
   );
 }

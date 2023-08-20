@@ -11,9 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@clerk/nextjs": "^4.23.2",
     "@ducanh2912/next-pwa": "latest",
     "@radix-ui/react-dialog": "latest",
+    "@vercel/kv": "^0.2.2",
     "autoprefixer": "latest",
+    "chart.js": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",
     "immer": "latest",

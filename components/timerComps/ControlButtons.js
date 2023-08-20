@@ -1,7 +1,7 @@
 import { MdReplay } from "react-icons/md";
 import { HiMiniPlay } from "react-icons/hi2";
 import { FaPause } from "react-icons/fa";
-import Button from "../Button";
+import Button from "@/components/ui/Button";
 import useAppStore from '@/lib/store/useAppStore';
 
 export default function ControlButtons() {
@@ -10,7 +10,6 @@ export default function ControlButtons() {
         breakTimeInSeconds: state.breakTimeInSeconds,
         reset: state.reset
     }));
-
 
 
     return (

@@ -9,11 +9,18 @@ export default function Footer() {
                 href="https://github.com/dalist1"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-white"
             >
-            🚀 Powered by Dalist
+                🚀 Powered by Dalist
             </a>
             <span>•</span>
-            <span>v{version}</span>
+            <a href="https://github.com/dalist1/tickly"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-white"
+            >
+                v{version}
+            </a>
         </div>
     )
 }

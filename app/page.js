@@ -1,16 +1,19 @@
-import Clock from "@/components/Clock";
+
 import Timer from "@/components/Timer";
-import DesktopNotification from "@/components/DesktopNotification";
+import DesktopNotification from "@/components/timerComps/DesktopNotification";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default async function Page() {
 
   return (
-    <div className="flex justify-center items-center h-screen w-screen relative">
-      <Clock />
-      <Timer />
-      <DesktopNotification />
-      <Footer />
-    </div>
+    <>
+      <Header />
+      <div className="flex justify-center items-center h-screen w-screen">
+        <Timer />
+        <DesktopNotification />
+        <Footer />
+      </div>
+    </>
   );
 }

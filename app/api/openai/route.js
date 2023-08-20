@@ -3,7 +3,7 @@ import openaiFunc from "@/lib/utils/openai";
 export const runtime = 'edge';
 export const fetchCache = 'force-no-store'
 
-export async function GET(Request) {
+export async function GET() {
     const response = await openaiFunc.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [

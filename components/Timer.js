@@ -1,8 +1,7 @@
 "use client"
 
 // Icons
-import { FiPlus } from "react-icons/fi";
-import { Suspense } from "react";
+import { FaPlus } from "react-icons/fa";
 
 // Radix
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -52,7 +51,7 @@ export default function Timer() {
               <span className="opacity-55 absolute inline-flex h-full w-full rounded-full bg-sky-400 duration-1000 group-hover:animate-ping"></span>
               <span className="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-sky-500 hover:bg-sky-400">
                 {" "}
-                <FiPlus size={25} />
+                <FaPlus size={25} />
               </span>
             </span>
           </DialogTrigger>
