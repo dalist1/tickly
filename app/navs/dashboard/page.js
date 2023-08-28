@@ -2,22 +2,26 @@
 
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
+import { useUser } from '@clerk/nextjs';
 
 export const fetchCache = 'force-no-store'
 
 const GradientChart = () => {
+  const { user } = useUser()
+  console.log(user)
+  const userid = user.id
+  console.log("dashboard userid", userid)
   const strategyName = 'Pomodoro Technique';
   const chartRef = useRef(null);
 
   useEffect(() => {
     if (chartRef.current) {
-      fetch(`/api/storage?strategyName=${encodeURIComponent(strategyName)}`, { cache: 'no-store' })
+      fetch(`/api/storage?userId=${encodeURIComponent(userid)}&strategyName=${encodeURIComponent(strategyName)}`, { cache: 'no-store' })
         .then(response => response.json())
         .then(data => {
           const labels = Object.keys(data).reverse();
           let taskTimes = Object.values(data).reverse();
 
-          // Replace NaN values with 0
           taskTimes = taskTimes.map(time => isNaN(time) ? 0 : time);
 
           const ctx = chartRef.current.getContext('2d');

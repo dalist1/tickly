@@ -1,22 +1,23 @@
-// /api/storage
+// /api/storage (ServerSide)
 
 import { kv } from "@vercel/kv"
 import { NextResponse } from "next/server"
 
 export const runtime = 'edge'
+export const fetchCache = 'force-no-store'
 
 export async function POST(request) {
-  console.log("api was called for POST")
+  // console.log(request)
+
   const res = await request.json()
-  const { strategyName, td } = res
-  const totalTime = td?.totalTime 
+  const { strategyName, td, uid } = res
+  const totalTime = td?.totalTime
   console.log('total time is', (totalTime || 0))
 
   const today = new Date().toLocaleDateString('en-US', { weekday: 'short' });
-  const key = `${strategyName}-${today}`;  
+  const key = `${uid}-${strategyName}-${today}`;
 
   let existingTotalTime = await kv.get(key)
-
 
   console.log("prev total time", existingTotalTime)
   console.log("adding an additional", totalTime)
@@ -35,7 +36,6 @@ export async function GET(request) {
     d.setDate(d.getDate() - i);
     return d.toLocaleDateString('en-US', { weekday: 'short' });
   });
-  
 
   const timeData = {};
   for (const date of dates) {

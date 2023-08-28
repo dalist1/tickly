@@ -9,20 +9,20 @@ export default function Header() {
         <div className="flex w-full items-center gap-8 justify-center p-4 top-0 fixed mx-auto">
             <OptionsLeft />
             {/* <Clock /> */}
-            {/* <Suspense fallback={<BiSolidUserCircle size={25} />}>
+            <Suspense fallback={<BiSolidUserCircle size={25} />}>
                 <SignedIn>
-                    <UserButton afterSignOutUrl="/"/>
+                    <UserButton afterSignOutUrl="/" />
                 </SignedIn>
             </Suspense >
             <Suspense fallback={<BiSolidUserCircle size={25} />}>
                 <SignedOut>
-                    <SignInButton mode="modal">
+                    <SignInButton afterSignInUrl="/" mode="modal">
                         <button className="btn">
                             <BiSolidUserCircle size={25} />
                         </button>
                     </SignInButton>
                 </SignedOut>
-            </Suspense> */}
+            </Suspense>
         </div>
     )
 

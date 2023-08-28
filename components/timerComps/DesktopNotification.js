@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import useAppStore from '@/lib/store/useAppStore';
 import { useEffect } from 'react';

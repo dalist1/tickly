@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/.pnpm/@ducanh2912+next-pwa@9.4.0_next@13.4.20-canary.0_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js":
+/***/ "./node_modules/.pnpm/@ducanh2912+next-pwa@9.5.0_next@13.4.20-canary.9_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js":
 /*!***********************************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/@ducanh2912+next-pwa@9.4.0_next@13.4.20-canary.0_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js ***!
+  !*** ./node_modules/.pnpm/@ducanh2912+next-pwa@9.5.0_next@13.4.20-canary.9_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js ***!
   \***********************************************************************************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\nself.fallback = async (_)=>{\n    let { destination: e, url: A } = _, s = {\n        document: \"/~offline\",\n        image: false,\n        audio: false,\n        video: false,\n        font: false\n    }[e];\n    return s ? caches.match(s, {\n        ignoreSearch: !0\n    }) : \"\" === e && false && 0 ? 0 : Response.error();\n};\n\n\n//# sourceURL=webpack://tickly/./node_modules/.pnpm/@ducanh2912+next-pwa@9.4.0_next@13.4.20-canary.0_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n\nself.fallback = async (_)=>{\n    let { destination: e, url: A } = _, s = {\n        document: \"/~offline\",\n        image: false,\n        audio: false,\n        video: false,\n        font: false\n    }[e];\n    return s ? caches.match(s, {\n        ignoreSearch: !0\n    }) : \"\" === e && false && 0 ? 0 : Response.error();\n};\n\n\n//# sourceURL=webpack://tickly/./node_modules/.pnpm/@ducanh2912+next-pwa@9.5.0_next@13.4.20-canary.9_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js?");
 
 /***/ })
 
@@ -43,7 +43,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\nself.fallback = async (_)=>
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./node_modules/.pnpm/@ducanh2912+next-pwa@9.4.0_next@13.4.20-canary.0_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./node_modules/.pnpm/@ducanh2912+next-pwa@9.5.0_next@13.4.20-canary.9_webpack@5.88.2/node_modules/@ducanh2912/next-pwa/dist/fallback.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

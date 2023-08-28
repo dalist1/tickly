@@ -1,23 +1,24 @@
-import { useState } from 'react';
+"use client"
+
 import { BiSolidMagicWand } from "react-icons/bi";
-import useAppStore from "@/lib/store/useAppStore";
+import useStrategyStore from "@/lib/store/useStrategyStore";
 import Loading from './Loading';
 
 export default function MagicStrat() {
-    const { handleControlClick } = useAppStore()
-    const [loading, setLoading] = useState(false);
+    const { loading } = useStrategyStore.getState();
 
-    const handleAiStrat = async () => {
-        setLoading(true);
-        try {
+    const handleAiStrat = () => {
+        return new Promise(async (resolve, reject) => {
+          try {
             const response = await fetch('/api/openai');
             const data = await response.json();
-            handleControlClick(data.taskTimeSeconds, data.breakTimeSeconds, data.name);
-        } catch (error) {
-            console.error(error);
-        }
-        setLoading(false);
-    }
+            updateTimerSettings(data.taskTimeSeconds, data.breakTimeSeconds, data.name);
+            resolve();
+          } catch (error) {
+            reject(error);
+          }
+        });
+      }
 
     return (
         loading ? <Loading /> :

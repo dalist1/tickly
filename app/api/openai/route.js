@@ -1,9 +1,12 @@
 import openaiFunc from "@/lib/utils/openai";
+import { currentUser } from "@clerk/nextjs";
 
 export const runtime = 'edge';
 export const fetchCache = 'force-no-store'
 
 export async function GET() {
+    const user = await currentUser()
+    console.log("openAI user", user?.id)
     const response = await openaiFunc.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
@@ -15,5 +18,12 @@ export async function GET() {
     const result = await response.json();
     const completionString = result.choices[0].message.content;
 
-    return new Response(completionString);
+    return new Response(completionString, {
+        status: 200,
+        headers: {
+            'Access-Control-Allow-Origin': 'https://tickly.vercel.app',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        }
+    });
 }
