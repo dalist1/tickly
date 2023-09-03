@@ -1,4 +1,3 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Lilita_One } from "next/font/google"
 
@@ -33,12 +32,12 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`bg-gray-950 text-white ${lolita.className}`}>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    // <ClerkProvider>
+    <html lang="en">
+      <body className={`bg-gray-950 text-white ${lolita.className}`}>
+        {children}
+      </body>
+    </html>
+    // </ClerkProvider>
   );
 }

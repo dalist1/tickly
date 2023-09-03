@@ -7,7 +7,6 @@ export const runtime = 'edge'
 export const fetchCache = 'force-no-store'
 
 export async function POST(request) {
-  // console.log(request)
 
   const res = await request.json()
   const { strategyName, td, uid } = res

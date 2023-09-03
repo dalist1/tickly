@@ -1,13 +1,12 @@
 "use client"
+
 import { convertSecondsToMinutes } from "@/lib/utils/secondsConverter";
-import useAppStore from "@/lib/store/useAppStore";
+import useAppStore from "@/lib/utils/storesss/useAppStore";
+import { DialogClose } from "@/components/ui/dialog";
+
 
 export default function StratsModal() {
-  const { strats, activeStrategy, updateStrategyAndTimer } = useAppStore();
-
-  const handleClick = (strategy) => {
-    updateStrategyAndTimer(strategy);
-  };
+  const { handleControlClick, activeStrategy, strats } = useAppStore();
 
   return (
     <div className="py-10">
@@ -17,10 +16,10 @@ export default function StratsModal() {
           const isActive = activeStrategy === name;
 
           return (
-            <div
+            <DialogClose
               className={`flex cursor-pointer justify-between rounded-lg bg-sky-500/5 px-4 py-4 text-gray-800 shadow hover:bg-sky-400/10 hover:drop-shadow-lg ${isActive ? "border-sky-400 border" : ""}`}
               key={name}
-              onClick={() => handleClick(strat)}
+              onClick={() => handleControlClick(taskTimeSeconds, breakTimeSeconds, name)}
             >
               <div className="space-y-3">
                 <p className="text-white">{name}</p>
@@ -31,7 +30,7 @@ export default function StratsModal() {
                   <p>{convertSecondsToMinutes(breakTimeSeconds)}</p>
                 </div>
               </div>
-            </div>
+            </DialogClose>
           );
         })}
       </div>

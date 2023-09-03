@@ -1,10 +1,10 @@
 'use client'
-// ControlButtons (React Component)
+
 import { MdReplay } from "react-icons/md";
 import { HiMiniPlay } from "react-icons/hi2";
 import { FaPause } from "react-icons/fa";
 import Button from "@/components/ui/Button";
-import useAppStore from '@/lib/store/useAppStore';
+import useAppStore from "@/lib/store/useAppStore";
 
 export default function ControlButtons() {
     const { reset, handleControlClick, isBreak, isActive } = useAppStore();
