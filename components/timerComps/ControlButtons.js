@@ -7,14 +7,14 @@ import Button from "@/components/ui/Button";
 import useAppStore from "@/lib/store/useAppStore";
 
 export default function ControlButtons() {
-    const { reset, handleControlClick, isBreak, isActive } = useAppStore();
+    const {handleControlClick, isBreak, isActive, resetAll } = useAppStore();
 
     return (
         <div className="space-x-20">
             <Button variant="primary" onClick={handleControlClick} disabled={isBreak}>
                 {isBreak || !isActive ? <HiMiniPlay size={40} /> : <FaPause size={40} />}
             </Button>
-            <Button variant="secondary" onClick={reset}>
+            <Button variant="secondary" onClick={resetAll}>
                 <MdReplay size={40} />
             </Button>
         </div>

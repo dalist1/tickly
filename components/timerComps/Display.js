@@ -1,7 +1,7 @@
 "use client"
 
 import { formatSeconds } from "@/lib/utils/formatSeconds";
-import useAppStore from "@/lib/store/usePlay";
+import useAppStore from "@/lib/store/useAppStore";
 
 export default function Display() {
   const { isBreak, taskTimeSeconds, breakSeconds, activeStrategy } = useAppStore();

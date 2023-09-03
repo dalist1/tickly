@@ -1,7 +1,7 @@
 'use client'
 
-import useAppStore from '@/lib/utils/storesss/useAppStore';
 import { useEffect } from 'react';
+import useAppStore from '@/lib/store/useAppStore';
 
 const DesktopNotification = ({ title = "⏰ Time is up, let's take a break!" }) => {
   const { isTimerEnded } = useAppStore()
