@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@clerk/nextjs": "^4.23.2",
+    "@clerk/nextjs": "^4.29.3",
     "@ducanh2912/next-pwa": "latest",
     "@radix-ui/react-dialog": "latest",
     "@vercel/kv": "^0.2.2",
